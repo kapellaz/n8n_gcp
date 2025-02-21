@@ -1,4 +1,4 @@
-### N8N installation on GCP
+## N8N installation on GCP
 
 #### Tech stack:
 - GCP
