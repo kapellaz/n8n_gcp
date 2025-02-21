@@ -178,3 +178,5 @@
     - https://subdomain.domain.com
 
 ### You are good to go
+
+#### More info in https://docs.n8n.io/hosting/installation/server-setups/docker-compose/
