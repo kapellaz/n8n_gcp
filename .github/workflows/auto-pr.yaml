@@ -3,7 +3,7 @@ name: Auto Create PR
 on:
   push:
     branches:
-      - n8n_backup/*
+      - n8n_backup
 
 jobs:
   create-pr:
