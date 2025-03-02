@@ -1,0 +1,28 @@
+name: Auto Create PR
+
+on:
+  push:
+    branches:
+      - n8n_backup/*
+
+jobs:
+  create-pr:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Create Pull Request
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          BRANCH_NAME=$(echo "${{ github.ref }}" | sed 's/refs\/heads\///')
+          PR_EXISTS=$(gh pr list --base main --head "$BRANCH_NAME" --json number --jq '. | length')
+          
+          if [ "$PR_EXISTS" -eq 0 ]; then
+            gh pr create --base main --head "$BRANCH_NAME" --title "Auto PR: $BRANCH_NAME" --body "This PR was automatically created."
+          else
+            echo "PR already exists. Skipping."
+          fi
+        shell: bash
