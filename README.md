@@ -12,6 +12,7 @@
 
 
 
+
 #### Steps:
 1. Create a new project in GCP.
 2. Enable Compute Engine API.
