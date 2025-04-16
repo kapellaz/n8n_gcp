@@ -177,6 +177,28 @@
 12. Access n8n
     - https://subdomain.domain.com
 
+
+
+## How to update
+ ```bash
+ sudo docker-compose pull
+ sudo docker-compose down
+ sudo docker-compose up -d
+ ```
+
+## Logging
+### Real time logs
+ ```bash
+ sudo docker-compose logs -f n8n
+
+ ```
+ ### Recent logs
+ ```bash
+ sudo  docker-compose logs n8n
+
+ ```
+
 ### You are good to go
 
-#### More info in https://docs.n8n.io/hosting/installation/server-setups/docker-compose/
+#### More instalation info in https://docs.n8n.io/hosting/installation/server-setups/docker-compose/
+#### More update info in https://docs.n8n.io/hosting/installation/docker/#updating
